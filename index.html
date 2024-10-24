@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Image Print Crop Sample</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Image Print Crop Sample</h1>
+    
+    <!-- Képméret választó form -->
+    <form id="sizeForm">
+        <fieldset>
+            <legend>Képméretek</legend>
+            <div id="sizesContainer"></div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Választható képek</legend>
+            <div id="imageContainer"></div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Tájolás</legend>
+            <input type="radio" id="landscape" name="orientation" value="landscape">
+            <label for="landscape">Fekvő</label>
+
+            <input type="radio" id="portrait" name="orientation" value="portrait">
+            <label for="portrait">Álló</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Vágás típusa</legend>
+            <input type="radio" id="fill-in" name="cropType" value="fill-in" checked>
+            <label for="fill-in">Fill-In</label>
+
+            <input type="radio" id="fit-in" name="cropType" value="fit-in">
+            <label for="fit-in">Fit-In</label>
+        </fieldset>
+    </form>
+
+    <!-- Munkaterület a kép megjelenítésére -->
+    <div id="workspace" class="workspace"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
