@@ -98,15 +98,24 @@ document.querySelectorAll('input[name="imageSize"]').forEach((radio) => {
 
 // Eseményfigyelők a képfájl választáshoz
 document.querySelectorAll('input[name="testImage"]').forEach((radio) => {
-  radio.addEventListener("change", (event) => {
-    selectedTestImage = {
-      width: parseInt(event.target.dataset.width),
-      height: parseInt(event.target.dataset.height),
-    }
-    console.log("Kiválasztott tesztkép:", selectedTestImage)
-    handleSelectionChange() // Újraszámolás
-  })
-})
+    radio.addEventListener("change", (event) => {
+        selectedTestImage = {
+            width: parseInt(event.target.dataset.width),
+            height: parseInt(event.target.dataset.height),
+        };
+        console.log("Kiválasztott tesztkép:", selectedTestImage);
+        
+        // Tájolás automatikus beállítása a kép aránya alapján
+        if (selectedTestImage.width > selectedTestImage.height) {
+            document.getElementById('landscape').checked = true;
+        } else {
+            document.getElementById('portrait').checked = true;
+        }
+
+        handleSelectionChange(); // Újraszámolás
+    });
+});
+
 
 // Eseményfigyelők a vágás típusához
 document.querySelectorAll('input[name="cropType"]').forEach((radio) => {
@@ -315,3 +324,7 @@ function displayFitImage() {
 
   console.log(`Fit-in kép megjelenítve a fehér lapon: ${newWidth}x${newHeight}`)
 }
+
+
+
+
