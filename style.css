@@ -1,0 +1,83 @@
+body {
+  font-family: sans-serif;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; 
+  gap: 20px;
+}
+
+fieldset {
+  flex: 1; 
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+legend {
+  font-size: 0.75em;
+  text-transform: uppercase;
+  padding: 0 10px;
+}
+
+.radio-label {
+  display: inline-block;
+  background-color: lightgray;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + .radio-label {
+  background-color: black;
+  color: white;
+}
+
+input[disabled] + .radio-label {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+#workspace {
+  width: 700px;
+  height: 700px;
+  background-color: whitesmoke;
+  border: 3px solid lightgray;
+  border-radius: 10px;
+  margin: 25px auto;
+  position: relative;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.testimage-bg {
+  background-color: lightgray;
+  border: 1px dashed rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  position: relative;
+}
+
+.size-bg {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.overlay {
+  position: absolute;
+  background-color: rgba(255, 0, 0, 0.5); 
+  z-index: 1;
+}
