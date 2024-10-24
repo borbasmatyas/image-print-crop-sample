@@ -22,23 +22,29 @@
             <div id="imageContainer"></div>
         </fieldset>
 
-        <fieldset>
-            <legend>Tájolás</legend>
-            <input type="radio" id="landscape" name="orientation" value="landscape">
-            <label for="landscape">Fekvő</label>
-
-            <input type="radio" id="portrait" name="orientation" value="portrait">
-            <label for="portrait">Álló</label>
-        </fieldset>
-
-        <fieldset>
-            <legend>Vágás típusa</legend>
-            <input type="radio" id="fill-in" name="cropType" value="fill-in" checked>
-            <label for="fill-in">Fill-In</label>
-
-            <input type="radio" id="fit-in" name="cropType" value="fit-in">
-            <label for="fit-in">Fit-In</label>
-        </fieldset>
+        <div>
+            <fieldset>
+                <legend>Tájolás</legend>
+                <!-- Álló vagy fekvő a kép, és/vagy hogy akarjuk mutatni -->
+                <div class="options-group">
+                    <input type="radio" id="portrait" name="orientation" value="portrait" disabled >
+                    <label for="portrait" class="radio-label">Álló</label>
+                    <input type="radio" id="landscape" name="orientation" value="landscape" disabled>
+                    <label for="landscape" class="radio-label">Fekvő</label>
+                </div>
+            </fieldset>
+    
+            <fieldset>
+                <legend>Vágás típusa</legend>
+                <!-- Fill-in vagy Fit-in vágást alkalmazzunk? -->
+                <div class="options-group">
+                    <input type="radio" id="fill-in" name="cropType" value="fill-in" checked>
+                    <label for="fill-in" class="radio-label">Fill-in (Kitöltés)</label>
+                    <input type="radio" id="fit-in" name="cropType" value="fit-in">
+                    <label for="fit-in" class="radio-label">Fit-in (Igazítás)</label>
+                </div>    
+            </fieldset>
+        </div>
     </form>
 
     <!-- Munkaterület a kép megjelenítésére -->
